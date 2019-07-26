@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+<form method="post">
+	<div class="col-10">
+		{% csrf_token %}
+	    {{ form }}
+		<button type="submit" class="btn btn-primary">Expand</button>
+	</div>
+</form>
+<table style="width:50%">
+<tr>
+	<th>Short URL</th>
+	<th>Long URL</th>
+	<th>Total Hits</th>
+</tr>
+<tr>
+	<td>{{result.short_url}}</td>
+	<td>{{result.long_url}}</td>
+	<td>{{result.total_hits}}</td>
+</tr>
+</div>
+
+{% endblock %}

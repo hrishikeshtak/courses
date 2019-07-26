@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+<form method="post">
+	<div class="col-10">
+		{% csrf_token %}
+	    {{ form }}
+		<button type="submit" class="btn btn-primary">Shorten</button>
+	</div>
+</form>
+<p>{{long_url}}&emsp;&emsp;&emsp;&emsp;{{short_url}}</p>
+
+</div>
+
+{% endblock %}
