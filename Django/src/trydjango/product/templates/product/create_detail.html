@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Title View</h1>
+<!---
+	Redirect to google search
+<form action="http://www.google.com/search" method="POST">
+	<input type="text" name="q" placeholder="your title"/>
+	<input type="submit" name="submit">
+</form>
+-->
+
+<form action="." method="POST">
+	{% csrf_token %}
+	{# <input type="text" name="title" placeholder="your title"/> #}
+	{{ form.as_p }}
+	<input type="submit" name="submit">
+</form>
+
+{% endblock %}

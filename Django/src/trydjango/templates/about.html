@@ -2,4 +2,15 @@
 
 {% block content %}
 <h1>This is about page.</h1>
+<p>{{ my_text }}</p>
+
+<ul>
+	{% for item in my_list %}
+		{% if item == 2 %}
+			<li>{{forloop.counter}} - {{item|add:10}}</li>
+		{% else %}
+			<li>{{forloop.counter}} - {{item}}</li>
+        {% endif %}
+	{% endfor %}
+</ul>
 {% endblock %}

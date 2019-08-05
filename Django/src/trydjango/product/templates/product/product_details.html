@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>In App Template</h1>
+<!--
+<h1>{{ objects.title }}</h1>
+<p>{% if objects.description %} {{objects.description}} {% else %} Coming Soon... {%endif%}</p>
+<p>{{objects.price}}</p>
+-->
+
+<!--
+<form method="POST">{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" name="save">
+</form>
+-->
+
+<h1>All Products List</h1>
+
+{% for item in object_list %}
+    <p>{{item.id}} - {{item.title}} </p>
+{% endfor %}
+{% endblock %}
